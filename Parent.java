@@ -1,25 +1,34 @@
-public class Parent 
+package Abstract;
+
+public abstract class Parent 
 {
-    public static void print()
-    {
-        System.out.println("parent class");
-    }
+    abstract void message();
     
 }
 
-class Child extends Parent
+class sub extends Parent 
 {
-    public static void print()
+    void message()
     {
-        System.out.println("child class");
+        System.out.println("This is first subclass");
     }
 }
 
-class ParentChild
+class sub1 extends Parent 
 {
-    public static void main(String[] args) 
+    void message()
     {
-        Parent.print();
-        Child.print();
+        System.out.println("This is second subclass");
+    }
+}
+
+class Abstract 
+{
+    public static void main(String[] args) {
+        sub obj = new sub();
+        obj.message();
+
+        sub1 obj1 = new sub1();
+        obj1.message();
     }
 }
