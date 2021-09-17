@@ -1,14 +1,15 @@
-public class Bank 
+package Abstract;
+
+public abstract class Bank 
 {
-    void getBalance()
-    {}
-    
+    abstract void getBalance();
 }
+
 class BankA extends Bank 
 {
     void getBalance()
     {
-        System.out.println(1000);
+        System.out.println(100);
     }
 }
 
@@ -16,7 +17,7 @@ class BankB extends Bank
 {
     void getBalance()
     {
-        System.out.println(1500);
+        System.out.println(150);
     }
 }
 
@@ -24,18 +25,22 @@ class BankC extends Bank
 {
     void getBalance()
     {
-        System.out.println(2000);
+        System.out.println(200);
     }
 }
 
-class checkBal
+class Money 
 {
-    public static void main(String[] args) {
-        BankA obj = new BankA();
-        obj.getBalance();
-        BankB obj1 = new BankB();
+    public static void main(String[] args) 
+    {
+        BankA obj1 = new BankA();
         obj1.getBalance();
-        BankC obj2 = new BankC();
+
+        BankB obj2 = new BankB();
         obj2.getBalance();
+
+        BankC obj3 = new BankC();
+        obj3.getBalance();
+        
     }
 }
